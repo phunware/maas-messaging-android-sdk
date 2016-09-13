@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/listPreferredItemHeight"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/padding_medium"
+    android:paddingRight="@dimen/padding_medium"
+    android:paddingTop="@dimen/padding_small"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/badge_one"
+        style="@style/TextAppearance.ListItem.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        tools:text="@string/inside"
+        android:textSize="@dimen/text_size_14"/>
+
+    <TextView
+        android:id="@+id/badge_two"
+        style="@style/TextAppearance.ListItem.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/badge_one"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="@dimen/padding_medium"
+        android:paddingTop="@dimen/padding_small"
+        tools:text="@string/monitored"
+        android:textSize="@dimen/text_size_14"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/TextAppearance.ListItem.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@id/badge_one"
+        android:layout_toStartOf="@id/badge_one"
+        android:ellipsize="end"
+        android:singleLine="true"
+        tools:text="@string/location" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        style="@style/TextAppearance.ListItem.SubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/title"
+        android:layout_toLeftOf="@id/badge_two"
+        android:layout_toStartOf="@id/badge_two"
+        android:paddingTop="@dimen/padding_small"
+        android:ellipsize="end"
+        android:singleLine="true"
+        tools:text="Some super cool location" />
+
+</RelativeLayout>
+
+
+
+
+
+

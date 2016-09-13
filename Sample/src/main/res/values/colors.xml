@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="accent">#FF5252</color>
+    <color name="text_secondary">#8a000000</color>
+    <color name="text_disabled">#1a000000</color>
+    <color name="dialog_bg">#FFF</color>
+    <color name="loading_shade">#58000000</color>
+    <color name="zone_inside_stroke">#388E3C</color>
+    <color name="zone_inside_fill">#40388e3c</color>
+    <color name="zone_monitored_stroke">#FFA000</color>
+    <color name="zone_monitored_fill">#40ffa000</color>
+    <color name="zone_default_stroke">#D32F2F</color>
+    <color name="zone_default_fill">#40d32f2f</color>
+    <color name="monitored_text">#46B1A8</color>
+</resources>

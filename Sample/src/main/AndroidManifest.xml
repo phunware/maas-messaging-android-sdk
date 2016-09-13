@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.phunware.locationmessaging.sample">
+
+    <application
+        android:name=".SampleApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="locationmessaging/message" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.ProfileAttributeSelectionActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+
+        <provider android:authorities="${applicationId}"
+            android:name=".sql.LogMessageProvider"
+            android:label="@string/app_name"
+            android:exported="false" />
+
+        <!-- Service subclass to customize notifications before they're presented to the user -->
+        <service android:name=".EditNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.phunware.locationmessaging.EDIT_NOTIFICATION" />
+            </intent-filter>
+        </service>
+
+        <meta-data android:name="com.phunware.APPLICATION_ID" android:value="@string/app_id" />
+        <meta-data android:name="com.phunware.ACCESS_KEY" android:value="@string/access_key" />
+        <meta-data android:name="com.phunware.SIGNATURE_KEY" android:value="@string/signature_key" />
+        <meta-data android:name="com.phunware.ENCRYPTION_KEY" android:value="@string/encrypt_key" />
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
