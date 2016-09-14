@@ -28,3 +28,44 @@ MaaS Mapping uses the following third party components.
 | [okhttp](https://github.com/square/okhttp)        | An HTTP+HTTP/2 client for Android and Java applications by Square, Inc. | [Apache 2.0](https://github.com/square/okhttp/blob/master/LICENSE.txt) |
 | [moshi](https://github.com/square/moshi)        | A modern JSON library for Android and Java by Square, Inc. | [Apache 2.0](https://github.com/square/moshi/blob/master/LICENSE.txt) |
 | [DiskLruCache](https://github.com/JakeWharton/DiskLruCache)        | Java implementation of a Disk-based LRU cache which specifically targets Android compatibility. | [Apache 2.0](https://github.com/JakeWharton/DiskLruCache/blob/master/LICENSE.txt) |
+
+## Setup
+-------
+1. Bring up the sample app with Android studio
+2. Create a new Android application in MAAS-portal
+3. In strings.xml (under Sample/src/main/res/values) of the downloaded sample, replace the appId, accessKey and signatureKey with values for this application in MAAS portal.
+
+  e.g.Replace the following strings with values from MaaS Portal
+
+  `<string name="appId">1421</string>`
+
+  `<string name="accesKey">b91b116ceafb413bed252a7b274e95a622aee20b</string>`
+
+  `<string name="sigKey">3191eacc0cd0a5f66b445d11fbdf08fad7c596b8</string>`
+
+  Because we also show a google map in the sample app, in order to use the locations feature please also add the following meta data tag with a google maps key
+
+  `<meta-data android:name="com.google.android.geo.API_KEY" android:value="XXXX"/>`
+
+4. Set up GCM at https://developers.google.com/cloud-messaging/android/client
+5. Create a project on Firebase console
+
+    -> Choose 'Add Firebase to Android app'
+
+    -> In the Firebase console, the package name should be the same as application id in build.grade (under Sample directory) in the sample app. The default application id in the messaging sample app is com.phunware.messaging.sample
+8. In the MAAS portal, for the newly created Android app, replace the API Key and sender id with the values for ServerKey and SenderId on the Firebase console (under CloudMessaging section)
+9. In build.gradle of the messaging sample app, replace GCMSenderId with the SenderId in Firebase console (under CloudMessaging section).
+
+  e.g.
+
+        defaultConfig {
+
+          applicationId "com.phunware.messaging.sample" minSdkVersion 16 targetSdkVersion 22
+          //insert your GCM sender id below
+          resValue 'string', 'GCMSenderId', '\"478224698966\"'
+
+        }
+
+10. The Firebase console creates a google-services.json file and downloads it to your default Downloads folder.
+11. Replace the default google-service.json file (under Sample directory) the sample app with the dowloaded google-service.json from Firebase console
+12. Compile the project under Android Studio and run it on the device
