@@ -19,15 +19,13 @@ Developer documentation can be found at
 
 Attribution
 -----------
-MaaS Mapping uses the following third party components.
+MaaS Messaging uses the following third party components.
 
 | Component     | Description   | License  |
 | ------------- |:-------------:| -----:|
-| [Picasso](https://github.com/square/picasso)      | A powerful image downloading and caching library for Android      |   [Apache 2.0](https://github.com/square/picasso/blob/master/LICENSE.txt) |
-| [AndroidSVG](https://code.google.com/p/androidsvg/)      | A SVG parser and renderer for Android      |   [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0) |
 | [okhttp](https://github.com/square/okhttp)        | An HTTP+HTTP/2 client for Android and Java applications by Square, Inc. | [Apache 2.0](https://github.com/square/okhttp/blob/master/LICENSE.txt) |
-| [moshi](https://github.com/square/moshi)        | A modern JSON library for Android and Java by Square, Inc. | [Apache 2.0](https://github.com/square/moshi/blob/master/LICENSE.txt) |
-| [DiskLruCache](https://github.com/JakeWharton/DiskLruCache)        | Java implementation of a Disk-based LRU cache which specifically targets Android compatibility. | [Apache 2.0](https://github.com/JakeWharton/DiskLruCache/blob/master/LICENSE.txt) |
+| [autovalue](https://github.com/google/auto/tree/master/value)        | AutoValue provides an easier way to create immutable value classes | [Apache 2.0](https://github.com/google/auto/blob/master/LICENSE.txt) |
+| [autovalue GSON](https://github.com/rharter/auto-value-gson)        | An extension for Google's AutoValue that creates a simple Gson TypeAdapterFactory for each AutoValue annotated object. | [Apache 2.0](https://github.com/rharter/auto-value-gson/blob/master/LICENSE.txt) |
 
 ## Setup
 -------
