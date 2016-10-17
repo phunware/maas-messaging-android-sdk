@@ -51,19 +51,9 @@ MaaS Messaging uses the following third party components.
     -> Choose 'Add Firebase to Android app'
 
     -> In the Firebase console, the package name should be the same as application id in build.grade (under Sample directory) in the sample app. The default application id in the messaging sample app is com.phunware.messaging.sample
-8. In the MAAS portal, for the newly created Android app, replace the API Key and sender id with the values for ServerKey and SenderId on the Firebase console (under CloudMessaging section)
-9. In build.gradle of the messaging sample app, replace GCMSenderId with the SenderId in Firebase console (under CloudMessaging section).
-
-  e.g.
-
-        defaultConfig {
-
-          applicationId "com.phunware.messaging.sample" minSdkVersion 16 targetSdkVersion 22
-          //insert your GCM sender id below
-          resValue 'string', 'GCMSenderId', '\"478224698966\"'
-
-        }
-
-10. The Firebase console creates a google-services.json file and downloads it to your default Downloads folder.
-11. Replace the default google-service.json file (under Sample directory) the sample app with the dowloaded google-service.json from Firebase console
-12. Compile the project under Android Studio and run it on the device
+6. In the MAAS portal, for the newly created Android app, replace the API Key and sender id with the values for ServerKey and SenderId on the Firebase console (under CloudMessaging section)
+7. The Firebase console creates a google-services.json file and downloads it to your default Downloads folder.
+8. Replace the default google-service.json file (under Sample directory) the sample app with the dowloaded google-service.json from Firebase console
+9. Add the google-services gradle plugin to you applications gradle file
+  `apply plugin: 'com.google.gms.google-services'`
+10. Compile the project under Android Studio and run it on the device
