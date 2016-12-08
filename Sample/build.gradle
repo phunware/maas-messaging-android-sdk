@@ -36,8 +36,8 @@ android {
 }
 
 dependencies {
-    compile 'com.phunware.messaging:messaging:3.0.1'
-    compile('com.phunware.messaging:beacon-location-manager:3.0.1') {
+    compile 'com.phunware.messaging:messaging:3.0.2'
+    compile('com.phunware.messaging:beacon-location-manager:3.0.2') {
         exclude group: 'com.phunware.messaging', module: 'messaging'
     }
 

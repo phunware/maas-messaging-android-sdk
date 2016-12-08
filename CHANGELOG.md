@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 3.0.2 *(2016-12-08)*
+----------------------------
+* Single device push notifications are now supported
+* Updated SqlCipher for Android 7+ support
+* Various bug fixes
+
 Version 3.0.1 *(2016-10-10)*
 ----------------------------
 * Updated Google Play Service to 9.6.1
