@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 3.0.3 *(2017-1-04)*
+----------------------------
+* Various bug fixes
+
 Version 3.0.2 *(2016-12-08)*
 ----------------------------
 * Single device push notifications are now supported
