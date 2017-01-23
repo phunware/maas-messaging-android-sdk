@@ -2,7 +2,7 @@
 
 [Android MaaS Messaging Documentation](http://phunware.github.io/maas-messaging-android-sdk/)
 =======
-**Version 3.0.3**
+**Version 3.0.4**
 ________________
 
 
