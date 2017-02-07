@@ -162,7 +162,7 @@ public class AttributeFragment extends Fragment implements AttributeAdapter.OnCl
                 public void onFailed(Throwable e) {
                     Logging.w(TAG, "Failed to download profile attributes", e);
                     mProfileAttribute = ProfileAttribute.builder()
-                            .profileAttributes(new HashMap<String, Object>())
+                            .profileAttributes(new HashMap<String, String>())
                             .deviceId("")
                             .build();
 
@@ -230,7 +230,7 @@ public class AttributeFragment extends Fragment implements AttributeAdapter.OnCl
         // Update the view to show the loading overlay
         mLoadingView.setVisibility(View.VISIBLE);
 
-        HashMap<String, Object> attributes = new HashMap<>(mProfileAttribute.profileAttributes());
+        HashMap<String, String> attributes = new HashMap<>(mProfileAttribute.profileAttributes());
 
         if (value == null || value.isEmpty()) {
             attributes.remove(key);

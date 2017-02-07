@@ -1,16 +1,19 @@
 package com.phunware.locationmessaging.sample;
 
-import android.app.Notification;
-import android.media.RingtoneManager;
+        import android.media.RingtoneManager;
+        import android.support.v4.app.NotificationCompat;
 
-import com.phunware.locationmessaging.messages.services.NotificationCustomizationService;
+        import com.phunware.locationmessaging.messages.services.NotificationCustomizationService;
 
 public class EditNotificationService extends NotificationCustomizationService {
 
     @Override
-    public void editNotification(Notification notification) {
+    public void editNotification(NotificationCompat.Builder notificationBuilder) {
         // Use the default notification sound for all notifications
-        notification.sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        notificationBuilder
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setSmallIcon(R.drawable.ic_motorcycle_black_24dp);
     }
 
 }
+

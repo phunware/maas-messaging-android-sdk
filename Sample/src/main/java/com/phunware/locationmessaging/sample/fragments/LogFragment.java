@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.phunware.core.PwCoreSession;
 import com.phunware.locationmessaging.sample.R;
 import com.phunware.locationmessaging.sample.SampleApplication;
 import com.phunware.locationmessaging.sample.activities.MainActivity;
@@ -180,7 +181,7 @@ public class LogFragment extends Fragment implements LoaderManager.LoaderCallbac
         // Send it
         Config config = AppSettings.readConfig(getActivity());
         String body = String.format(Locale.US, BODY_FORMAT,
-                config.getAppId(), config.getEnvironment());
+                config.getAppId(), PwCoreSession.getInstance().getEnvironment());
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
