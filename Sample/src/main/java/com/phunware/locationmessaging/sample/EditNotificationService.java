@@ -11,9 +11,7 @@ public class EditNotificationService extends NotificationCustomizationService {
     public void editNotification(NotificationCompat.Builder notificationBuilder) {
         // Use the default notification sound for all notifications
         notificationBuilder
-                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-                .setSmallIcon(R.drawable.ic_motorcycle_black_24dp);
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
     }
 
 }
-
