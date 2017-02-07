@@ -19,7 +19,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.phunware.core.PwCoreSession;
 import com.phunware.locationmessaging.LocationMessaging;
 import com.phunware.locationmessaging.entities.Message;
 import com.phunware.locationmessaging.messages.MessageManager;
@@ -81,9 +80,9 @@ public class MainActivity extends AppCompatActivity
                 LocationMessaging.analytics().trackCampaignAppLaunched(intentMessage.campaignId(),
                         intentMessage.campaignType());
 
-                boolean hasPromo = getIntent()
-                        .getBooleanExtra(MessageManager.EXTRA_PROMO_HTML_FLAG, false);
-                if (hasPromo) {
+                boolean hasExtras = getIntent()
+                        .getBooleanExtra(MessageManager.EXTRA_HAS_EXTRAS, false);
+                if (hasExtras) {
                     // Add the list fragment to the view *outside* the transaction we're
                     // going to commit so that it's before the detail view on the back stack.
                     trans.replace(R.id.content, new MessageListFragment());

@@ -3,6 +3,7 @@ package com.phunware.locationmessaging.sample.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.phunware.core.PwCoreSession;
 import com.phunware.locationmessaging.LocationMessaging;
 import com.phunware.locationmessaging.sample.R;
 import com.phunware.locationmessaging.sample.models.Config;
@@ -13,7 +14,6 @@ public final class AppSettings {
 
     private final static String APP_CONFIG_TITLE = "Title";
     private final static String APP_CONFIG_APPID = "AppId";
-    private final static String APP_CONFIG_ENV = "Environment";
     private final static String APP_CONFIG_SELECTED_CONFIG = "SelectedConfig";
 
     public static void saveConfig(Context context, final Config config) {
@@ -21,7 +21,6 @@ public final class AppSettings {
         final SharedPreferences.Editor editor = prefs.edit();
         editor.putString(APP_CONFIG_TITLE, config.getTitle());
         editor.putLong(APP_CONFIG_APPID, config.getAppId());
-        editor.putInt(APP_CONFIG_ENV, config.getEnvironment().ordinal());
         editor.commit();
     }
 
@@ -37,8 +36,6 @@ public final class AppSettings {
 
         String title = prefs.getString(APP_CONFIG_TITLE, "");
         long appId = prefs.getLong(APP_CONFIG_APPID, -1L);
-        int envValue = prefs.getInt(APP_CONFIG_ENV, 0);
-        LocationMessaging.Environment env = LocationMessaging.Environment.values()[envValue];
 
         Config config;
 
@@ -48,7 +45,7 @@ public final class AppSettings {
             saveConfigPosition(context, 0);
         }
         else {
-            config = new Config(title, appId, env);
+            config = new Config(title, appId);
         }
 
         return config;
@@ -60,9 +57,19 @@ public final class AppSettings {
     }
 
     public static Config getDefaultConfigStage(Context context) {
-        return new Config("Test Messaging Prod",
-                Long.parseLong(context.getString(R.string.app_id)),
-                LocationMessaging.Environment.PROD);
+        String currentEnv = "";
+        switch (PwCoreSession.getInstance().getEnvironment()) {
+            case DEV:
+                currentEnv = "dev";
+                break;
+            case STAGE:
+                currentEnv = "stage";
+                break;
+            default:
+                currentEnv = "prod";
+        }
+        return new Config("Test Messaging " + currentEnv,
+                Long.parseLong(context.getString(R.string.app_id)));
     }
 
     private AppSettings() { }

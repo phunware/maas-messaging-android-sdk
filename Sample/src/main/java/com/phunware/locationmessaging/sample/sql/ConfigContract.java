@@ -25,9 +25,7 @@ final public class ConfigContract {
             + TABLE_NAME + " ("
             + ConfigEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + ConfigEntry.COLUMN_TITLE + " TEXT,"
-            + ConfigEntry.COLUMN_APP_ID + " TEXT,"
-            + ConfigEntry.COLUMN_ENVIRONMENT + " INTEGER)";
-
+            + ConfigEntry.COLUMN_APP_ID + " TEXT)";
     /**
      * Contains the SQL query to use to drop the table
      */
@@ -42,31 +40,25 @@ final public class ConfigContract {
 
         public static final String COLUMN_TITLE = "Title";
         public static final String COLUMN_APP_ID = "AppId";
-        public static final String COLUMN_ENVIRONMENT = "Environment";
     }
 
     static final String[] ALL_COLUMNS = {ConfigEntry._ID,
             ConfigEntry.COLUMN_TITLE,
             ConfigEntry.COLUMN_APP_ID,
-            ConfigEntry.COLUMN_ENVIRONMENT,
     };
 
     public static ContentValues toContentValues(final Config config) {
         ContentValues values = new ContentValues();
         values.put(ConfigEntry.COLUMN_TITLE, config.getTitle());
         values.put(ConfigEntry.COLUMN_APP_ID, config.getAppId());
-        int envValue = Config.environmentToInt(config.getEnvironment());
-        values.put(ConfigEntry.COLUMN_ENVIRONMENT, envValue);
         return values;
     }
 
     public static Config fromCursor(Cursor cursor) {
         String title = cursor.getString(cursor.getColumnIndex(ConfigEntry.COLUMN_TITLE));
         Long appId = cursor.getLong(cursor.getColumnIndex(ConfigEntry.COLUMN_APP_ID));
-        int envValue = cursor.getInt(cursor.getColumnIndex(ConfigEntry.COLUMN_ENVIRONMENT));
-        LocationMessaging.Environment env = Config.environmentFromInt(envValue);
 
-        return new Config(title, appId, env);
+        return new Config(title, appId);
     }
 
     public static boolean keyExists(SQLiteDatabase db, final String key) {
