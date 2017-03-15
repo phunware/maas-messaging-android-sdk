@@ -15,7 +15,7 @@ This is Phunware's Android SDK for Messaging. Visit http://maas.phunware.com/ fo
 ### Documentation
 
 Developer documentation can be found at
-[developer.phunware.com](https://developer.phunware.com/pages/viewpage.action?pageId=3409274).
+[developer.phunware.com](https://developer.phunware.com/display/DD/Source+Documents+-+Android+SDK+-+Marketing+Automation).
 
 Attribution
 -----------
