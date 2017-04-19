@@ -2,7 +2,7 @@
 
 [Android MaaS Messaging Documentation](http://phunware.github.io/maas-messaging-android-sdk/)
 =======
-**Version 3.0.4**
+**Version 3.0.5**
 ________________
 
 
@@ -15,7 +15,7 @@ This is Phunware's Android SDK for Messaging. Visit http://maas.phunware.com/ fo
 ### Documentation
 
 Developer documentation can be found at
-[developer.phunware.com](https://developer.phunware.com/display/DD/Source+Documents+-+Android+SDK+-+Marketing+Automation).
+[developer.phunware.com](https://developer.phunware.com/pages/viewpage.action?pageId=3409274).
 
 Attribution
 -----------
@@ -57,7 +57,3 @@ MaaS Messaging uses the following third party components.
 9. Add the google-services gradle plugin to you applications gradle file
   `apply plugin: 'com.google.gms.google-services'`
 10. Compile the project under Android Studio and run it on the device
-
------------
-
-You understand and consent to Phunware’s Privacy Policy located at www.phunware.com/privacy. If your use of Phunware’s software requires a Privacy Policy of your own, you also agree to include the terms of Phunware’s Privacy Policy in your Privacy Policy to your end users.

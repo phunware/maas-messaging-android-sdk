@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 3.0.5 *(2017-4-19)*
+----------------------------
+* Static id updates
+* Deep-linking bug fix
+* Various bug fixes
+
 Version 3.0.4 *(2017-1-23)*
 ----------------------------
 * Various bug fixes
