@@ -8,7 +8,6 @@ import com.phunware.locationmessaging.location.LocationManager;
 import com.phunware.locationmessaging.log.FileLogger;
 import com.phunware.locationmessaging.log.LogLogger;
 import com.phunware.locationmessaging.sample.loggers.ContentProviderLogger;
-import com.phunware.locationmessaging.sample.models.Config;
 
 
 public class SampleApplication extends Application {
@@ -19,7 +18,6 @@ public class SampleApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        PwCoreSession.getInstance().setEnvironment(PwCoreSession.Environment.PROD);
         PwCoreSession.getInstance().registerKeys(this, getString(R.string.app_id),
                 getString(R.string.access_key), getString(R.string.signature_key), "");
 
@@ -27,7 +25,6 @@ public class SampleApplication extends Application {
 
         new LocationMessaging.Builder(this)
                 .appId(Long.parseLong(getString(R.string.app_id)))
-                .environment(PwCoreSession.getInstance().getEnvironment())
                 .addLogger(new ContentProviderLogger(this))
                 .addLogger(new LogLogger())
                 .addLogger(mFileLogger)
