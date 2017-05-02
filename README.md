@@ -57,3 +57,7 @@ MaaS Messaging uses the following third party components.
 9. Add the google-services gradle plugin to you applications gradle file
   `apply plugin: 'com.google.gms.google-services'`
 10. Compile the project under Android Studio and run it on the device
+
+Privacy
+-----------
+You understand and consent to Phunware’s Privacy Policy located at www.phunware.com/privacy. If your use of Phunware’s software requires a Privacy Policy of your own, you also agree to include the terms of Phunware’s Privacy Policy in your Privacy Policy to your end users.
